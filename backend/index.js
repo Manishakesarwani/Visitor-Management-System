@@ -31,7 +31,7 @@ const PORT = process.env.PORT;
 app.get("/", (req, res) => {
     return res.status(200).json({"message": "Home Page"});
 });
-app.use("/Visitorpasses", express.static(path.join(__dirname, "Visitorpasses")));
+app.use("/VisitorPasses", express.static(path.join(__dirname, "VisitorPasses")));
 app.use("/api/user", User);
 app.use("/api/visitors", Visitor);
 app.use("/uploads", express.static("uploads"));
