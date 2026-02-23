@@ -13,7 +13,7 @@ export const UseGetAppointments = () => {
 
     const getAllAppointments = async () => {
 
-        let link = `${process.env.RENDER_URL}/api/appointments`;
+        let link = `${process.env.REACT_APP_RENDER_URL}/api/appointments`;
 
         setIsLoading(true);
 
@@ -21,7 +21,7 @@ export const UseGetAppointments = () => {
 
         if(user.Role==="employee"){
             setIsEligibleToCreate(true);
-            link = `${process.env.RENDER_URL}/api/appointments/employee`;
+            link = `${process.env.REACT_APP_RENDER_URL}/api/appointments/employee`;
         }
         else{
             setIsEligibleToCreate(false);
