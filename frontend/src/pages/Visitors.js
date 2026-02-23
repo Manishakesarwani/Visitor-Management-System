@@ -34,7 +34,9 @@ const Visitors = () => {
         else{
             setIsRemoveEligible(false);
         }
-        
+
+
+        //eslint-disable-next-line react-hooks/exhaustive-deps
     },[user]);
 
     const handleRemove = async(id) => {

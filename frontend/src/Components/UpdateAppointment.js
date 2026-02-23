@@ -8,7 +8,7 @@ const UpdateAppointment = ({Status, ID}) => {
     const [status, setStatus] = useState("");
     const [eligible, setEligible] = useState("");
     const {user} = UseAuthorizationContext();
-    const {updateStatus, appointments, updateAppointment} = UseUpdateAppointment();
+    const {updateStatus, updateAppointment} = UseUpdateAppointment();
     const {getAllAppointments} = UseGetAppointments();
     const [hideA, setHideA] = useState(false);
     const [hideR, setHideR] = useState(false);

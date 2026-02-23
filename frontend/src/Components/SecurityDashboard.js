@@ -25,7 +25,7 @@ const SecurityDashboard = () => {
     useEffect(()=>{
 
         fetchAdminStatics();
-
+        //eslint-disable-next-line react-hooks/exhaustive-deps
     },[]);
   return (
     <div className='security'>

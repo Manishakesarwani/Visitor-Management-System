@@ -46,6 +46,7 @@ const SearchVisistors = () => {
     useEffect(()=>{
         const CheckSearch = setTimeout(handleSearch, 500);
         return () => clearTimeout(CheckSearch);
+        //eslint-disable-next-line react-hooks/exhaustive-deps
     },[searchData]);
 
   return (

@@ -43,6 +43,7 @@ export const CheckPass = ({p_id}) => {
         }
 
         // console.log("checklogs", checklogs);
+        //eslint-disable-next-line react-hooks/exhaustive-deps
     }, [user]);
 
     const logs = checklogs.find((c)=>c.PassID?.toString() === p_id?.toString())
