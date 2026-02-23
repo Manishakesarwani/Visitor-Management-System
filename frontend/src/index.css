@@ -1,0 +1,515 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+html{
+  background: #BFC6C4;
+}
+body{
+  background-color: #f1f1f1;
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+}
+.error{
+  color: red;
+  margin: 5px 0;
+  text-align: center;
+}
+.success{
+  color: green;
+  margin: 5px 0;
+  text-align: center;
+}
+.App{
+  /* height: 100vh; */
+  background: #BFC6C4;
+  height: 100%;
+}
+header, footer{
+  background-color: #6F8F72;
+  color: white;
+}
+header .container{
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: "Poppins", sans-serif;
+}
+
+header a:link, header a:visited, header a:active{
+  color: #333;
+  text-decoration: none;
+}
+header h1 span{
+  color: white;
+  padding: 0 10px;
+  font-size: 30px;
+}
+.container{
+  max-width: 1400px;
+  padding: 20px;
+  margin: 0 auto;
+}
+nav div span{
+  color: white;
+  margin-right: 5px;
+}
+nav div button{
+  padding: 5px 15px;
+  border: 1px solid #E8E2D8;
+  border-radius: 4px;
+  background: #E8E2D8;
+  color: #6F8F72;
+  transition: all ease 0.2s;
+}
+nav div button:hover{
+  color: white;
+  background: transparent;
+}
+nav a:link, nav a:visited, nav a:active{
+  margin-right: 10px;
+  color: white;
+  padding: 5px 15px;
+  transition: all ease 0.2s;
+}
+
+nav a:hover{
+  background-color: #E8E2D8;
+  color: #6F8F72;
+  border: 1px solid #E8E2D8;
+  border-radius: 4px;
+}
+.signup form, .login form, .visitorsForm form, .appointment_form form, .pass_form form{
+  max-width: 30%;
+  margin: 0 auto;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 15px 0;
+  font-family: "Poppins", sans-serif;
+  font-size: 18px;
+}
+.signup form div, .login form div, .visitorsForm form div, .appointment_form form div{
+  width: 90%;
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+}
+.signup div input, .signup div select, .login div input, .visitorsForm div input, .appointment_form div input.appointment_form form div select, .appointment_form form div textarea, .pass_form form select{
+  width: 98%;
+  display: block;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 4px;
+  border: 1px solid #333;
+  outline: none;
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+}
+.signup div select{
+  width: 98% !important;
+}
+.signup button, .login button, .visitorsForm button, .appointment_form button, .pass_form button{
+  width: 98%;
+  border-radius: 4px;
+  outline: none;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #6F8F72;
+  font-family: "Poppins", sans-serif;
+  font-size: 18px;
+  cursor: pointer;
+  background: #6F8F72;
+  color: white;
+  transition: all ease 0.2s;
+}
+.signup button:hover, .login button:hover, .visitorsForm button:hover, .appointment_form button:hover, .pass_form button:hover{
+  background: white;
+  color: #6F8F72;
+}
+.nav-links{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.nav-links div{
+  background: #90AB8B;
+  padding: 5px 15px;
+  border: 1px solid #90AB8B;
+  border-radius: 4px;
+  box-shadow: 1px 1px 1px 1px gray;
+  cursor: pointer;
+  transition: all ease-in 0.3s;
+}
+.nav-links a:link, .nav-links a:visited, .nav-links a:active{
+  text-decoration: none;
+  color: white;
+}
+.nav-links div:hover{
+  box-shadow: none;
+}
+.admin, .employee, .security{
+  padding: 3% 0;
+}
+.admin h3, .employee h3, .security h3{
+  padding: 1% 0;
+  text-align: center;
+  color: #213C51;
+  font-size: 3vw;
+}
+.adminDashboard, .employeeDashboard, .securityDashboard{
+  display: grid;
+  grid-template-columns: 2fr 2fr;
+  gap: 10px;
+  /* width: 50%; */
+}
+.adminDashboard div, .employeeDashboard div, .securityDashboard div{
+  background: white;
+  margin: 2%;
+  padding: 2%;
+  border: 2px solid white;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.adminDashboard div h2, .employeeDashboard div h2, .securityDashboard div h2{
+  color: #3B4953;
+  padding: 10px 0;
+  margin: 0;
+  text-align: center;
+}
+.adminDashboard div hr, .employeeDashboard div hr, .securityDashboard div hr{
+  width: 80%;
+  color: #3B4953;
+  margin: 0;
+}
+.adminDashboard div p, .employeeDashboard div p, .securityDashboard div p{
+  font-size: 25px;
+  padding: 10px 0;
+  margin: 0;
+}
+.reports button{
+  background: #213c51;
+  color: white;
+  border: 1px solid #213c51;
+  padding: 5px 15px;
+  border-radius: 4px;
+}
+.reports button:hover{
+  color: #213c51;
+  background: #bfc6c4;
+}
+.VisitorPage{
+  width: 100%;
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  gap: 10px;
+}
+.VisitorPageExtra{
+  width: 100%;
+  display: grid;
+  grid-template-columns: 5fr !important;
+}
+.visitorsForm form{
+  max-width: 100%;
+  width: 100%;
+  margin: auto;
+}
+.Visitor_profile>div{
+  width: 98%;
+  background: #fff;
+  margin-bottom: 10px;
+  padding: 15px;
+  border-radius: 5px;
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
+}
+.Visitor_profile>div:nth-child(1){
+  background: #fff;
+  margin-bottom: 10px;
+  padding: 15px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.Visitor_profile input{
+  width: 95%;
+  outline: none;
+  border: 1px solid #6F8F72;
+  padding: 10px;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+.Visitor_profile i{
+  font-size: 20px;
+  padding: 8px;
+  color: #6F8F72;
+  font-weight: bold;
+}
+
+.VisitorPage h3{
+  text-align: center;
+}
+.visitor-img{
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.visitor-img.loaded{
+  opacity: 1;
+}
+.vis{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.vis_remove i{
+  font-size: 25px;
+  padding: 15px;
+  color: red;
+  cursor: pointer;
+}
+.Appointments_page{
+  width: 100%;
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  gap: 10px;
+}
+.Appointments_pageExtra{
+   width: 100%;
+   display: grid;
+   grid-template-columns: 5fr !important;
+}
+.filter select, .filter input, .filter button{
+  margin-right: 10px;
+}
+.filter button{
+  background-color: #90AB8B;
+  border: 1px solid #90AB8B;
+  color: white;
+  border-radius: 4px;
+  padding: 5px 15px;
+  transition: all ease 0.2s;
+}
+.filter button:hover{
+  background: white;
+  color: #90AB8B;
+}
+.appointment_form form, .pass_form form{
+  max-width: 100%;
+}
+.appointment_form form div, .appointment_form form div{
+  margin: 5px 0;
+}
+.appointment_form form div label{
+  margin-right: 4px;
+}
+
+.appointment_list .appointments_details{
+  display: flex;
+  justify-content: space-between;
+}
+.Visitor_Details{
+  flex: 0.5;
+}
+.employee_details{
+  flex: 0.5;
+  text-align: right;
+  justify-items: flex-end;
+}
+.update_app {
+    width: 30%;
+}
+.appointment_list span{
+  display: block;
+}
+.appointments_status, .appointments_created{
+  margin: 5px 0;
+}
+.appointments h3{
+  text-align: center;
+}
+.appointment_form h3{
+  text-align: center;
+}
+.appointment_list div{
+  margin-bottom: 10px;
+  border: 1px solid #fff;
+  border-radius: 4px;
+  background: #fff;
+  padding: 10px;
+}
+.appointment_list h4{
+  font-size: 16px;
+}
+.appointment_list span{
+  font-size: 14px;
+}
+.appointments_created{
+  font-size: 12px;
+}
+.appointments_details, .Visitor_Details, .employee_details, .appointments_status, .appointments_created, .update_app, .appointment-icons{
+  margin: 0 !important;
+  padding: 0 !important;
+}
+.appointment-icons {
+    font-size: 30px;
+    cursor: pointer;
+}
+.app-icon, .rej-icon {
+    font-size: 35px;
+    margin: 10px 10px;
+    max-width: 100% !important;
+    display: inline-block;
+    width: 36% !important;
+    text-align: center;
+    color: white;
+    border-radius: 50%;
+}
+.Appointments_pageExtra .app-icon, .Appointments_pageExtra .rej-icon{
+  width: 30% !important;
+}
+.app-icon {
+    background: #01b201;
+}
+.rej-icon{
+    background: red;
+}
+.hide{
+  display: none;
+}
+.appointment-icons:has(.hide){
+  width: 100% !important;
+  text-align: center;
+}
+.pass_page{
+  width: 100%;
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  gap: 10px;
+}
+.allPass h3, .pass_form h3{
+  text-align: center;
+}
+.allPass div{
+  background: white;
+  padding: 10px;
+  border: 1px solid white;
+  border-radius: 4px;
+  margin-bottom: 5px;
+}
+.pass_form form{
+  padding: 15px;
+}
+.p_info, .v_info, .v_qr{
+  margin: 0 !important;
+  padding: 0 !important;
+}
+.p_info, .p_check{
+  display: flex;
+}
+.v_info div, .pass_l div{
+  margin: 0 !important;
+  padding: 0 !important;
+}
+.p_check{
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+.check-buttons{
+  text-align: center;
+}
+.check-buttons button {
+    border: 1px solid grey;
+    outline: 0;
+    border-radius: 4px;
+    background: white;
+    width: 70%;
+}
+footer{
+  text-align: center;
+  font-size: 14px;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  left: 0;
+}
+@media screen and (max-width: 1050px) {
+  .container{
+    max-width: 100% !important;
+    width: 100%;
+  }
+  header nav div span{
+    display: none;
+  }
+  .signup form, .login form, .visitorsForm form, .appointment_form form, .pass_form form {
+    max-width: 70%;
+  }
+  header h1 span{
+    font-size: 30px;
+    padding: 0 5px;
+  }
+  .adminDashboard div h2, .employeeDashboard div h2, .securityDashboard div h2 {
+    font-size: 20px;
+  }
+  .adminDashboard div p, .employeeDashboard div p, .securityDashboard div p {
+    font-size: 18px;
+  }
+  .VisitorPage {
+    grid-template-columns: auto;
+  }
+  .Visitor_profile>div{
+    width: 100%;
+  }
+  .vis > div{
+    font-size: 14px;
+  }
+  .vis_remove{
+    font-size: 23px !important;
+  }
+  .Appointments_page {
+    grid-template-columns: auto;
+  }
+  .appointment_list h4 {
+    font-size: 14px;
+  }
+  .appointment_list span {
+    font-size: 12px;
+  }
+  .pass_page {
+    grid-template-columns: auto;
+  }
+  .p_check{
+    font-size: 14px;
+  }
+}
+@media screen and (max-width: 900px) {
+  .container{
+    width: 100%;
+  }
+  header nav div span{
+    display: none;
+  }
+  .signup form, .login form, .visitorsForm form, .appointment_form form, .pass_form form {
+    max-width: 100%;
+  }
+  .admin h3, .employee h3, .security h3 {
+    font-size: 25px;
+  }
+  header h1 span{
+    font-size: 20px;
+    padding: 0 5px;
+  }
+  .app-icon, .rej-icon {
+    font-size: 20px;
+    margin: 0px 4px;
+  }
+  .filter {
+    font-size: 14px;
+  }
+}
