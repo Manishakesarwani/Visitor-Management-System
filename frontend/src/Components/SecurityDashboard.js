@@ -7,7 +7,7 @@ const SecurityDashboard = () => {
     const [securitynfo, setSecurityInfo] = useState();
 
     const fetchAdminStatics = async()=>{
-            const response = await fetch(`${process.env.RENDER_URL}/api/security/dashboard`, {
+            const response = await fetch(`${process.env.REACT_APP_RENDER_URL}/api/security/dashboard`, {
                 method: "GET",
                 headers: {
                     "Authorization": `Bearer ${user.token}`,

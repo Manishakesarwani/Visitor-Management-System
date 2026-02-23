@@ -16,7 +16,7 @@ export const UseCreatePass = () => {
         setIsError("");
         setIsSuccess(false);
 
-        const response = await fetch(`${process.env.RENDER_URL}/api/pass`, {
+        const response = await fetch(`${process.env.REACT_APP_RENDER_URL}/api/pass`, {
             method: "POST",
             headers: {
                 "Authorization": `Bearer ${user.token}`,

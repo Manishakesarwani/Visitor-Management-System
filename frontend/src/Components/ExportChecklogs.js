@@ -9,7 +9,7 @@ const ExportChecklogs = () => {
     const handleReportDownload = async()=>{
         setIsExporting(true);
     
-        const response = await fetch(`${process.env.RENDER_URL}/api/checkpass/export`, {
+        const response = await fetch(`${process.env.REACT_APP_RENDER_URL}/api/checkpass/export`, {
             method: "GET",
             headers: {
                 "Authorization": `Bearer ${user.token}`,

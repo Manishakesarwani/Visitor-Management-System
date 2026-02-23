@@ -12,7 +12,7 @@ export const UseLogin = () => {
         setIsLoading(true);
         setError(null);
 
-        const response = await  fetch(`${process.env.RENDER_URL}/api/user/login`, {
+        const response = await  fetch(`${process.env.REACT_APP_RENDER_URL}/api/user/login`, {
             method: "POST",
             body: JSON.stringify({Username, Password}),
             headers: {

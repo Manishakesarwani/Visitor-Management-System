@@ -20,30 +20,30 @@ const FilterAppointments = () => {
 
         if(user.Role==="employee"){
             if(appStatus && fromDate && toDate){
-                link = `${process.env.RENDER_URL}/api/appointments/filter?Status=${appStatus}&From=${fromDate}&To=${toDate}&id=${user.Role}`;
+                link = `${process.env.REACT_APP_RENDER_URL}/api/appointments/filter?Status=${appStatus}&From=${fromDate}&To=${toDate}&id=${user.Role}`;
             }
             else if(appStatus){
-                link = `${process.env.RENDER_URL}/api/appointments/filter?Status=${appStatus}&id=${user.Role}`;
+                link = `${process.env.REACT_APP_RENDER_URL}/api/appointments/filter?Status=${appStatus}&id=${user.Role}`;
             }
             else if(fromDate && toDate){
-                link = `${process.env.RENDER_URL}/api/appointments/filter?From=${fromDate}&To=${toDate}&id=${user.Role}`;
+                link = `${process.env.REACT_APP_RENDER_URL}/api/appointments/filter?From=${fromDate}&To=${toDate}&id=${user.Role}`;
             }
             else{
-                link = `${process.env.RENDER_URL}/api/appointments/employee`;
+                link = `${process.env.REACT_APP_RENDER_URL}/api/appointments/employee`;
             }
         }
         else{
             if(appStatus && fromDate && toDate){
-                link = `${process.env.RENDER_URL}/api/appointments/filter?Status=${appStatus}&From=${fromDate}&To=${toDate}`;
+                link = `${process.env.REACT_APP_RENDER_URL}/api/appointments/filter?Status=${appStatus}&From=${fromDate}&To=${toDate}`;
             }
             else if(appStatus){
-                link = `${process.env.RENDER_URL}/api/appointments/filter?Status=${appStatus}`;
+                link = `${process.env.REACT_APP_RENDER_URL}/api/appointments/filter?Status=${appStatus}`;
             }
             else if(fromDate && toDate){
-                link = `${process.env.RENDER_URL}/api/appointments/filter?From=${fromDate}&To=${toDate}`;
+                link = `${process.env.REACT_APP_RENDER_URL}/api/appointments/filter?From=${fromDate}&To=${toDate}`;
             }
             else{
-                link = `${process.env.RENDER_URL}/api/appointments`;
+                link = `${process.env.REACT_APP_RENDER_URL}/api/appointments`;
             }
         }
 
@@ -75,10 +75,10 @@ const FilterAppointments = () => {
         let link;
 
         if(user.Role==="employee"){
-            link = `${process.env.RENDER_URL}/api/appointments/employee`;
+            link = `${process.env.REACT_APP_RENDER_URL}/api/appointments/employee`;
         }
         else{
-            link = `${process.env.RENDER_URL}/api/appointments`;
+            link = `${process.env.REACT_APP_RENDER_URL}/api/appointments`;
         }
 
         const response = await fetch(link, {

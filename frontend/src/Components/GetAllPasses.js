@@ -37,7 +37,7 @@ const GetAllPasses = () => {
                         <div className='p_info'>
                             <div className='v_info'>
                                 {p.VisitorId && (
-                                    <img src={`${process.env.RENDER_URL}/${p.VisitorId.Photo}`} width="80" alt='Visitor Profile' />
+                                    <img src={`${process.env.REACT_APP_RENDER_URL}/${p.VisitorId.Photo}`} width="80" alt='Visitor Profile' />
                                 )}
                                 {p.VisitorId && (<div><strong>{p.VisitorId.Name}</strong></div>)}
                                 {p.VisitorId && (<div><strong>{p.VisitorId.PhoneNumber}</strong></div>)}
@@ -48,7 +48,7 @@ const GetAllPasses = () => {
                         </div>
                 
                         Validity - {format(new Date(p.AcceptableFrom), "MM/dd/yyyy")} to {format(new Date(p.AcceptableTill), "MM/dd/yyyy")}<br />
-                        Pdf File - <a href={`${process.env.RENDER_URL}/${p.PdfFile}`} target='_blank' rel='noopener noreferrer' download>Download Visitor Pass</a>
+                        Pdf File - <a href={`${process.env.REACT_APP_RENDER_URL}/${p.PdfFile}`} target='_blank' rel='noopener noreferrer' download>Download Visitor Pass</a>
                     </div>
                         <div className='check'>
                             <CheckPass p_id={p._id} /> 

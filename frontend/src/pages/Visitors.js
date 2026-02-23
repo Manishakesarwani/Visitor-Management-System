@@ -84,7 +84,8 @@ const Visitors = () => {
                {!visError && visitors && visitors.map((v)=>(
                     <div key={v._id} className='vis'>
                         <div>
-                            <img src={`http://localhost:5000/${v.Photo}`} width="80" alt='Visitor Profile' onLoad={(e)=>e.target.classList.add("loaded")} className='visitor-img' />
+                            {`${process.env.REACT_APP_RENDER_URL}/${v.Photo.replace(/\\/g, '/')}`}
+                            <img src={`${process.env.REACT_APP_RENDER_URL}/${v.Photo.replace(/\\/g, '/')}`} width="80" alt='Visitor Profile' onLoad={(e)=>e.target.classList.add("loaded")} className='visitor-img' />
                             <h4 className='visitor_name'>{v.Name}</h4>
                             <div className='visitors_info'>{v.Username}</div>
                             <div className='visitors_info'>+91 - {v.PhoneNumber}</div>

@@ -14,7 +14,7 @@ export const UseGetAllPasses = () => {
 
         setIsLoading(true);
 
-        const response = await fetch(`${process.env.RENDER_URL}/api/pass`, {
+        const response = await fetch(`${process.env.REACT_APP_RENDER_URL}/api/pass`, {
             method: "GET",
             headers: {
                 "Authorization": `Bearer ${user.token}`
@@ -22,6 +22,8 @@ export const UseGetAllPasses = () => {
         });
 
         const json = await response.json();
+
+        console.log(json);
 
         if(!response.ok){
             setIsLoading(false);
