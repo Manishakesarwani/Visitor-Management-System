@@ -10,7 +10,7 @@ const ExportAppointmentReport = () => {
     const handleReportDownload = async()=>{
         setIsExporting(true);
     
-        const response = await fetch("http://localhost:5000/api/appointments/export", {
+        const response = await fetch(`${process.env.RENDER_URL}/api/appointments/export`, {
             method: "GET",
             headers: {
                 "Authorization": `Bearer ${user.token}`,

@@ -11,7 +11,7 @@ export const UseGetVisitors = () => {
 
     const getAllVisitor = async() => {
         setVisError("");
-            const response = await fetch("http://localhost:5000/api/visitors", {
+            const response = await fetch(`${process.env.RENDER_URL}/api/visitors`, {
                 method: "GET",
                 headers: {
                     "Authorization": `Bearer ${user.token}`

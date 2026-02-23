@@ -15,7 +15,7 @@ export const UseCreateAppointment = () => {
         setAppointmentError("");
         setAppointmentSuccess(false);
 
-        const response = await fetch("http://localhost:5000/api/appointments", {
+        const response = await fetch(`${process.env.RENDER_URL}/api/appointments`, {
             method: "POST",
             body: JSON.stringify({VisitorId, Objective, When}),
             headers: {

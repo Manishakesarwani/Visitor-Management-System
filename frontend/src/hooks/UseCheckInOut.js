@@ -13,7 +13,7 @@ export const UseCheckInOut = () =>{
     const {checklogs, dispatch} = UseCheckInOutContext();
 
     const getLogs = async() => {
-        const response = await fetch(`http://localhost:5000/api/checkpass`, {
+        const response = await fetch(`${process.env.RENDER_URL}/api/checkpass`, {
             method: "GET",
             headers: {
                 "Content-Type": "application/json",
@@ -32,7 +32,7 @@ export const UseCheckInOut = () =>{
         setIsLoading(true);
         setIsCheckedOut(false);
 
-        const response = await fetch(`http://localhost:5000/api/checkpass/${passId}`, {
+        const response = await fetch(`${process.env.RENDER_URL}/api/checkpass/${passId}`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",

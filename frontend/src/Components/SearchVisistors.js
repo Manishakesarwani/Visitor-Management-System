@@ -16,10 +16,10 @@ const SearchVisistors = () => {
         setIsSearching(true);
         setSearchError(null);
 
-        let link = "http://localhost:5000/api/visitors";
+        let link = `${process.env.RENDER_URL}/api/visitors`;
 
         if(searchData.trim()){
-            link=`http://localhost:5000/api/visitors/search?searchedVis=${searchData}`
+            link=`${process.env.RENDER_URL}/api/visitors/search?searchedVis=${searchData}`
         }
 
         const response = await fetch(link, {

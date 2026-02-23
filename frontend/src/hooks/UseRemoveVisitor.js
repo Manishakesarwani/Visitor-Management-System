@@ -13,7 +13,7 @@ export const UseRemoveVisitor = () => {
         setIsRemoving(true);
         setRemoveError("");
 
-        const response = await fetch(`http://localhost:5000/api/visitors/remove/${id}`, {
+        const response = await fetch(`${process.env.RENDER_URL}/api/visitors/remove/${id}`, {
             method: "DELETE",
             headers: {
                 "Content-type":"application/json",

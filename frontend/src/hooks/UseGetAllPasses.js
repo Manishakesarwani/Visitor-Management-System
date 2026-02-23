@@ -14,7 +14,7 @@ export const UseGetAllPasses = () => {
 
         setIsLoading(true);
 
-        const response = await fetch("http://localhost:5000/api/pass", {
+        const response = await fetch(`${process.env.RENDER_URL}/api/pass`, {
             method: "GET",
             headers: {
                 "Authorization": `Bearer ${user.token}`

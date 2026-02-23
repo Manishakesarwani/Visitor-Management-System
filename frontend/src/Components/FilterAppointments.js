@@ -20,30 +20,30 @@ const FilterAppointments = () => {
 
         if(user.Role==="employee"){
             if(appStatus && fromDate && toDate){
-                link = `http://localhost:5000/api/appointments/filter?Status=${appStatus}&From=${fromDate}&To=${toDate}&id=${user.Role}`;
+                link = `${process.env.RENDER_URL}/api/appointments/filter?Status=${appStatus}&From=${fromDate}&To=${toDate}&id=${user.Role}`;
             }
             else if(appStatus){
-                link = `http://localhost:5000/api/appointments/filter?Status=${appStatus}&id=${user.Role}`;
+                link = `${process.env.RENDER_URL}/api/appointments/filter?Status=${appStatus}&id=${user.Role}`;
             }
             else if(fromDate && toDate){
-                link = `http://localhost:5000/api/appointments/filter?From=${fromDate}&To=${toDate}&id=${user.Role}`;
+                link = `${process.env.RENDER_URL}/api/appointments/filter?From=${fromDate}&To=${toDate}&id=${user.Role}`;
             }
             else{
-                link = `http://localhost:5000/api/appointments/employee`;
+                link = `${process.env.RENDER_URL}/api/appointments/employee`;
             }
         }
         else{
             if(appStatus && fromDate && toDate){
-                link = `http://localhost:5000/api/appointments/filter?Status=${appStatus}&From=${fromDate}&To=${toDate}`;
+                link = `${process.env.RENDER_URL}/api/appointments/filter?Status=${appStatus}&From=${fromDate}&To=${toDate}`;
             }
             else if(appStatus){
-                link = `http://localhost:5000/api/appointments/filter?Status=${appStatus}`;
+                link = `${process.env.RENDER_URL}/api/appointments/filter?Status=${appStatus}`;
             }
             else if(fromDate && toDate){
-                link = `http://localhost:5000/api/appointments/filter?From=${fromDate}&To=${toDate}`;
+                link = `${process.env.RENDER_URL}/api/appointments/filter?From=${fromDate}&To=${toDate}`;
             }
             else{
-                link = "http://localhost:5000/api/appointments";
+                link = `${process.env.RENDER_URL}/api/appointments`;
             }
         }
 
@@ -75,10 +75,10 @@ const FilterAppointments = () => {
         let link;
 
         if(user.Role==="employee"){
-            link = `http://localhost:5000/api/appointments/employee`;
+            link = `${process.env.RENDER_URL}/api/appointments/employee`;
         }
         else{
-            link = "http://localhost:5000/api/appointments";
+            link = `${process.env.RENDER_URL}/api/appointments`;
         }
 
         const response = await fetch(link, {

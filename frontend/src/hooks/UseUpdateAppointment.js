@@ -13,7 +13,7 @@ export const UseUpdateAppointment = () => {
     const updateAppointment = async (id, Status) => {
 
         setUpdateStatus(true);
-        const response = await fetch(`http://localhost:5000/api/appointments/${id}`, {
+        const response = await fetch(`${process.env.RENDER_URL}/api/appointments/${id}`, {
             method: "PATCH",
             headers: {
                 "Content-type": "application/json",

@@ -7,7 +7,7 @@ const EmployeeDashboard = () => {
     const [employeeInfo, setEmployeeInfo] = useState();
 
     const fetchAdminStatics = async()=>{
-            const response = await fetch("http://localhost:5000/api/employee/dashboard", {
+            const response = await fetch(`${process.env.RENDER_URL}/api/employee/dashboard`, {
                 method: "GET",
                 headers: {
                     "Authorization": `Bearer ${user.token}`,

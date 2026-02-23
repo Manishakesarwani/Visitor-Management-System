@@ -10,7 +10,7 @@ const Reports = () => {
     const handleReportDownload = async()=>{
         setIsExporting(true);
 
-        const response = await fetch("http://localhost:5000/api/visitors/export", {
+        const response = await fetch(`${process.env.RENDER_URL}/api/visitors/export`, {
             method: "GET",
             headers: {
                 "Authorization": `Bearer ${user.token}`,
