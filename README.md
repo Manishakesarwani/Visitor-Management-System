@@ -58,13 +58,16 @@
 
 ## To run the react app
 
-# Please clone the repository to your folder.
+# Please clone the repository to your folder using below command.
+# git clone -b master https://github.com/Manishakesarwani/Visitor-Management-System.git
 # Within the terminal, go inside Visitor Management system folder run below commant to run Backend.
 
+# npm i
 # cd backend
 # npm run dev
 
 # Then open another terminal, and run below commands to run backend.
 
+# npm i
 # cd frontend
 # npm run dev
