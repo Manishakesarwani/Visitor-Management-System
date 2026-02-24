@@ -8,6 +8,7 @@ const path = require("path");
 const {format} = require("date-fns");
 const {Parser} = require("json2csv");
 const { send_SMS } = require("../sendSMS/SendSMS");
+const {toZonedTime} = require("date-fns-tz");
 
 exports.getAllPass = async (req, res) => {
     const passes = await Pass.find()
@@ -45,6 +46,7 @@ exports.createNewPass = async (req, res) => {
         AcceptableTill.setDate(AcceptableTill.getDate()+2);
         AcceptableTill.setMilliseconds(AcceptableTill.getMilliseconds()-1);
 
+
         // console.log(AcceptableTill);
 
         const visitor = await Visitor.findById(appointment.VisitorId._id);
@@ -75,8 +77,12 @@ exports.createNewPass = async (req, res) => {
             const f_name = pass1.PdfFile.split("/");
             const f_path = path.join(__dirname, "../", pass1.PdfFile);
 
+            //Converting time to IST.
+            const t_zone = "Asia/Kolkata";
+            const from = toZonedTime(pass1.AcceptableFrom, t_zone);
+            const to = toZonedTime(pass1.AcceptableTill, t_zone);
 
-            await sendPass_Mail(pass1.VisitorId.Username, `Pass Generated`, `Hi ${pass1.VisitorId.Name},<br><br>Your Pass for the requested appointment has been generated. Please find the attachment to review the same. You are requested to carry the same durring appointment.<br><br><b>Please note: Validity of this pass is ${format(new Date(pass1.AcceptableFrom), "MM/dd/yyyy")} to ${format(new Date(pass1.AcceptableTill), "MM/dd/yyyy")}</b><br><br>Thank you!`, f_name[1],f_path);
+            await sendPass_Mail(pass1.VisitorId.Username, `Pass Generated`, `Hi ${pass1.VisitorId.Name},<br><br>Your Pass for the requested appointment has been generated. Please find the attachment to review the same. You are requested to carry the same durring appointment.<br><br><b>Please note: Validity of this pass is ${format(from, "MM/dd/yyyy")} to ${format(to, "MM/dd/yyyy")}</b><br><br>Thank you!`, f_name[1],f_path);
 
             await send_SMS(`+91${pass1.VisitorId.PhoneNumber}`, `Hi ${pass1.VisitorId.Name}, Your Pass for the requested appointment has been generated. Please check the pass and it's validity shared over mail.`);
 
