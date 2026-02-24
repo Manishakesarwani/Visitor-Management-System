@@ -79,10 +79,10 @@ exports.addVisitor = async (req, res) => {
         }
         else if(!validator.isMobilePhone(PhoneNumber, "en-IN")){
             // res.status(400).json({error: 'Please mention valid Mobile number.'});
-            throw Error("Please mention valid Mobile number and country code.");
+            throw Error("Please mention valid Mobile number.");
         }
         else if(!(req.file.mimetype.startsWith("image/png") || req.file.mimetype.startsWith("image/jpeg"))){
-            throw Error("Please mention valid image!");
+            throw Error("Please mention valid image(jpeg/png format only)!");
         }
         else if(visitor){
             throw Error("Visitor already exists!")
@@ -151,5 +151,20 @@ exports.exportReqVisitors = async(req,res)=>{
     }catch(err){
         console.log(err.message);
         return res.status(400).json({error: err.message});
+    }
+}
+
+exports.signupUserViaAdmin = async(req,res) => {
+    const {Name, Username, Password, Role} = req.body;
+
+    try{
+        const user = await UserModel.signup(Name, Username, Password, Role);
+
+        //create a token
+        const token = createToken(user._id, user.Role);
+        res.status(200).json({Name, Username, Role, token});
+
+    }catch(err){
+        res.status(400).json({error: err.message});
     }
 }

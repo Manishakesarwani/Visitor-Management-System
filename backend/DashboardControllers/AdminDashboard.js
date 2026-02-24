@@ -2,6 +2,7 @@ const Visitors = require("../models/VisitorModel");
 const Appointments = require("../models/AppointmentModel");
 const Pass = require("../models/PassModel");
 const CheckLogs = require("../models/CheckInOutModel");
+const UserModel = require("../models/UserModel");
 
 exports.getAdminStatistics = async (req, res) => {
 
@@ -51,7 +52,14 @@ exports.getAdminStatistics = async (req, res) => {
             }
         });
         const t_chkin=ch1+ch2;
-        res.status(200).json({msg: "Admin Statistics", t_v, t_a, a_a, r_a, a_p_count,t_chkin,t_passes,t_checklogs});
+
+        const count_employee = await UserModel.countDocuments({
+            Role: "employee"
+        });
+        const count_security = await UserModel.countDocuments({
+            Role: "security"
+        });
+        res.status(200).json({msg: "Admin Statistics", t_v, t_a, a_a, r_a, a_p_count,t_chkin,t_passes,t_checklogs, count_employee, count_security});
     }catch(err){
         return res.status(400).json({error: err.message});
     }

@@ -10,6 +10,7 @@ const Dashboard = () => {
     const {user} = UseAuthorizationContext();
     const [passAccess, setPassAccess] = useState(false);
 
+
     useEffect(()=>{
         if(user.Role==="admin" || user.Role==="security"){
           setPassAccess(true);
@@ -35,6 +36,11 @@ const Dashboard = () => {
           {user && passAccess && (
             <div className='Pass_link'>
               <Link to="/pass">Passes</Link>
+            </div>
+          )}
+          {user.Role==="admin" && (
+            <div className='addUsers'>
+              <Link to="/admin/user">Create user</Link>
             </div>
           )}
       </div>

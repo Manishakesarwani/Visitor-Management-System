@@ -80,7 +80,7 @@ nav a:hover{
   border: 1px solid #E8E2D8;
   border-radius: 4px;
 }
-.signup form, .login form, .visitorsForm form, .appointment_form form, .pass_form form{
+.signup form, .login form, .visitorsForm form, .appointment_form form, .pass_form form, .selfvisitorsForm form{
   max-width: 30%;
   margin: 0 auto;
   background: #fff;
@@ -91,12 +91,12 @@ nav a:hover{
   font-family: "Poppins", sans-serif;
   font-size: 18px;
 }
-.signup form div, .login form div, .visitorsForm form div, .appointment_form form div{
+.signup form div, .login form div, .visitorsForm form div, .appointment_form form div, .selfvisitorsForm form div{
   width: 90%;
   font-family: "Poppins", sans-serif;
   font-size: 16px;
 }
-.signup div input, .signup div select, .login div input, .visitorsForm div input, .appointment_form div input.appointment_form form div select, .appointment_form form div textarea, .pass_form form select{
+.signup div input, .signup div select, .login div input, .visitorsForm div input, .appointment_form div input.appointment_form form div select, .appointment_form form div textarea, .pass_form form select, .selfvisitorsForm form div input{
   width: 98%;
   display: block;
   padding: 10px;
@@ -110,7 +110,25 @@ nav a:hover{
 .signup div select{
   width: 98% !important;
 }
-.signup button, .login button, .visitorsForm button, .appointment_form button, .pass_form button{
+.selfvis{
+  display: grid;
+  grid-template-columns: 2fr 2fr;
+}
+.visitorPass {
+    text-align: center;
+    background: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.visitorPass h1{
+  margin: 20px 0;
+}
+.selfvisitorsForm form{
+  max-width: 70%;
+}
+.signup button, .login button, .visitorsForm button, .appointment_form button, .pass_form button, .selfvisitorsForm button{
   width: 98%;
   border-radius: 4px;
   outline: none;
@@ -124,7 +142,7 @@ nav a:hover{
   color: white;
   transition: all ease 0.2s;
 }
-.signup button:hover, .login button:hover, .visitorsForm button:hover, .appointment_form button:hover, .pass_form button:hover{
+.signup button:hover, .login button:hover, .visitorsForm button:hover, .appointment_form button:hover, .pass_form button:hover, .selfvisitorsForm button:hover{
   background: white;
   color: #6F8F72;
 }
@@ -439,6 +457,26 @@ footer{
   right: 0;
   left: 0;
 }
+.Users_page{
+  width: 100%;
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  gap: 10px;
+}
+.User_profile .vis1{
+  background: white;
+  padding: 10px;
+  border: 1px solid white;
+  border-radius: 4px;
+  margin-bottom: 5px;
+}
+.vis1 h5 {
+    display: inline;
+    font-size: 16px;
+}
+.Users_page .signup form{
+  max-width: 100% !important;
+}
 @media screen and (max-width: 1050px) {
   .container{
     max-width: 100% !important;
@@ -447,7 +485,7 @@ footer{
   header nav div span{
     display: none;
   }
-  .signup form, .login form, .visitorsForm form, .appointment_form form, .pass_form form {
+  .signup form, .login form, .visitorsForm form, .appointment_form form, .pass_form form, .selfvisitorsForm form {
     max-width: 70%;
   }
   header h1 span{
@@ -459,6 +497,9 @@ footer{
   }
   .adminDashboard div p, .employeeDashboard div p, .securityDashboard div p {
     font-size: 18px;
+  }
+  .selfvis {
+    grid-template-columns: auto;
   }
   .VisitorPage {
     grid-template-columns: auto;
@@ -491,11 +532,13 @@ footer{
 @media screen and (max-width: 900px) {
   .container{
     width: 100%;
+    display: block !important;
+    text-align: center;
   }
   header nav div span{
     display: none;
   }
-  .signup form, .login form, .visitorsForm form, .appointment_form form, .pass_form form {
+  .signup form, .login form, .visitorsForm form, .appointment_form form, .pass_form form, .selfvisitorsForm form {
     max-width: 100%;
   }
   .admin h3, .employee h3, .security h3 {

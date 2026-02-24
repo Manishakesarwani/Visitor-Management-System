@@ -7,7 +7,7 @@ const Signup = () => {
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-    const [role, setRole] = useState("");
+    const [role, setRole] = useState("admin");
 
     const {signup, error, isLoading} = UseSignup();
 
@@ -49,11 +49,8 @@ const Signup = () => {
             </div>
             <div>
                 <label htmlFor='role'>Role</label>
-                <select id='role' value={role} onChange={(e)=>setRole(e.target.value)}>
-                    <option value="">Select Role</option>
+                <select id='role' defaultValue="admin" onChange={(e)=>setRole(e.target.value)}>
                     <option value="admin">Admin</option>
-                    <option value="employee">Employee</option>
-                    <option value="security">Security</option>
                 </select>
             </div>
             <div>

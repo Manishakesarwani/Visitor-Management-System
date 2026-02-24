@@ -6,6 +6,8 @@ import ExportAppAppointments from './ExportAppAppointments';
 import ExportRejectedAppointments from './ExportRejectedAppointments';
 import ExportPasses from './ExportPasses';
 import ExportChecklogs from './ExportChecklogs';
+import EmployeeReports from './EmployeeReports';
+import SecurityReport from './SecurityReport';
 
 
 
@@ -46,6 +48,8 @@ const AdminDashboard = () => {
         {!isLoading && (
         <div className='adminDashboard'>
             {adminInfo && <div><h2><i className="bi bi-people"></i> Total Visitor </h2> <hr /> <p>{adminInfo.t_v}</p>{adminInfo.t_v>0 && (<Reports />)}</div>}
+            {adminInfo && <div><h2><i className="bi bi-people"></i> Total Employee </h2> <hr /> <p>{adminInfo.count_employee}</p>{adminInfo.count_employee>0 && (<EmployeeReports />)}</div>}
+            {adminInfo && <div><h2><i className="bi bi-people"></i> Total Security </h2> <hr /> <p>{adminInfo.count_security}</p>{adminInfo.count_security>0 && (<SecurityReport />)}</div>}
             {adminInfo && <div><h2><i className="bi bi-calendar"></i> Total Appointments</h2> <hr /> <p>{adminInfo.t_a}</p>{adminInfo.t_a>0 && (<ExportAppointmentReport />)}</div>}
             {adminInfo && <div><h2><i className="bi bi-calendar-check-fill"></i> Total Approved Appointments</h2> <hr /> <p>{adminInfo.a_a}</p>{adminInfo.a_a>0 && (<ExportAppAppointments />)}</div>}
             {adminInfo && <div><h2><i className="bi bi-calendar-x-fill"></i> Total Rejected Appointments</h2> <hr /> <p>{adminInfo.r_a}</p>{adminInfo.r_a>0 && (<ExportRejectedAppointments />)}</div>}

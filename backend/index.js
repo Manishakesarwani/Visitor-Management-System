@@ -12,6 +12,7 @@ const CheckInOut = require("./routes/CheckInOut");
 const adminDashboard = require("./routes/AdminDashboardRoute");
 const employeeDashboard = require("./routes/EmployeeDashboardRoute");
 const securityDashboard = require("./routes/SecurityDashboardRoute");
+const UserViaAdmin = require("./routes/UserViaAdminRoute");
 
 
 const app = express();
@@ -33,6 +34,7 @@ app.get("/", (req, res) => {
 });
 app.use("/VisitorPasses", express.static(path.join(__dirname, "VisitorPasses")));
 app.use("/api/user", User);
+app.use("/api/admin", UserViaAdmin);
 app.use("/api/visitors", Visitor);
 app.use("/uploads", express.static("uploads"));
 app.use("/api/appointments", Appointment);

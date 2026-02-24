@@ -8,6 +8,8 @@ import Visitors from './pages/Visitors';
 import Appointments from './pages/Appointments';
 import Pass from './pages/Pass';
 import Footer from './Components/Footer';
+import SelfVisitorRegistration from './pages/SelfVisitorRegistration';
+import Users from './pages/Users';
 
 function App() {
 
@@ -23,9 +25,11 @@ function App() {
           <Route path='/' element={user ? <Home /> : <Navigate to="/login" />} />
           <Route path='/login' element={!user ? <Login /> : <Navigate to="/" />} />
           <Route path='/signup' element={!user ? <Signup /> : <Navigate to="/" />} />
+          <Route path='/self/visitors' element={!user ? <SelfVisitorRegistration /> : <Navigate to="/" />}/>
           <Route path='/visitors' element={!user ? <Navigate to="/" /> : <Visitors />} />
           <Route path='/appointments' element={!user ? <Navigate to="/" /> : <Appointments />} />
           <Route path="/pass" element={!user ? <Navigate to="/" /> : <Pass />}></Route>
+          <Route path='/admin/user' element={!user ? <Navigate to="/" /> : <Users />} />
         </Routes>
         </div>
       </main>
