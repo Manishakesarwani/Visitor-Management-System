@@ -22,7 +22,7 @@ const Visitors = () => {
     const {visitors, isEligible, visError, getAllVisitor} = UseGetVisitors();
     const {isRemoving, removeError, removeVis} = UseRemoveVisitor();
 
-
+ 
     useEffect(()=>{
         if(user){
             getAllVisitor();
