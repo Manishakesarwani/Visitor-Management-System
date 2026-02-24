@@ -3,7 +3,7 @@ const email = require("nodemailer");
 const senderInfo = email.createTransport({
     host: process.env.HOST,
     port: process.env.SMTP_PORT,
-    secure: false,
+    secure: true,
     auth: {
         user: process.env.USERNAME_GMAIL,
         pass: process.env.PASSWORD
