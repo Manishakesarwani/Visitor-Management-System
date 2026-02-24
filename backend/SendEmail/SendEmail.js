@@ -1,22 +1,26 @@
 const email = require("nodemailer");
 
 const senderInfo = email.createTransport({
-    service: "gmail",
+    host: process.env.HOST,
+    port: process.env.SMTP_PORT,
+    secure: false,
     auth: {
         user: process.env.USERNAME_GMAIL,
         pass: process.env.PASSWORD
     }
+
 });
 
 exports.send_Mail = async (reciever, emailSubject, emailBody) => {
     try{
         // console.log(reciever, emailSubject, emailBody);
-        await senderInfo.sendMail({
-            from: process.env.USERNAME_GMAIL,
+        const info = await senderInfo.sendMail({
+            from: "manishakesarwani9354@gmail.com",
             to: reciever,
             subject: emailSubject,
             html: emailBody
         });
+        console.log("Email sent", info.response);
     }catch(err){
         console.log("Error", err.message);
         throw err;
@@ -27,7 +31,7 @@ exports.sendPass_Mail = async (reciever, emailSubject, emailBody, vis_name, f_pa
     try{
         // console.log(reciever, emailSubject, emailBody);
         await senderInfo.sendMail({
-            from: process.env.USERNAME_GMAIL,
+            from: "manishakesarwani9354@gmail.com",
             to: reciever,
             subject: emailSubject,
             html: emailBody,

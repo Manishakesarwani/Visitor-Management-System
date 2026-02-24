@@ -19,6 +19,9 @@ const UpdateAppointment = ({Status, ID}) => {
         const success = await updateAppointment(ID, "approve");
 
         if(success){
+            setStatus("Approved");
+            setHideA(true);
+            setHideR(true);
             await getAllAppointments();
         }
         // console.log("approve");
@@ -31,6 +34,9 @@ const UpdateAppointment = ({Status, ID}) => {
         const success = await updateAppointment(ID, "rejected");
 
         if(success){
+            setStatus("Rejected");
+            setHideR(true);
+            setHideA(true);
             await getAllAppointments();
         }
     }
