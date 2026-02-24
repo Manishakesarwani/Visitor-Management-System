@@ -14,7 +14,10 @@ const AdminDashboard = () => {
     const {user} = UseAuthorizationContext();
     const [adminInfo, setAdminInfo] = useState();
 
+    const [isLoading, setIsLoading] = useState(false);
+
     const fetchAdminStatics = async()=>{
+        setIsLoading(true);
             const response = await fetch(`${process.env.REACT_APP_RENDER_URL}/api/admin/dashboard`, {
                 method: "GET",
                 headers: {
@@ -26,6 +29,7 @@ const AdminDashboard = () => {
             const json = await response.json();
 
             if(response.ok){
+                setIsLoading(false);
                 setAdminInfo(json);
             }
     }
@@ -38,6 +42,8 @@ const AdminDashboard = () => {
   return (
     <div className='admin'>
         <h3>Welcome, {user.Name}!</h3>
+        {isLoading && (<h5>Loading Counts...</h5>)}
+        {!isLoading && (
         <div className='adminDashboard'>
             {adminInfo && <div><h2><i className="bi bi-people"></i> Total Visitor </h2> <hr /> <p>{adminInfo.t_v}</p>{adminInfo.t_v>0 && (<Reports />)}</div>}
             {adminInfo && <div><h2><i className="bi bi-calendar"></i> Total Appointments</h2> <hr /> <p>{adminInfo.t_a}</p>{adminInfo.t_a>0 && (<ExportAppointmentReport />)}</div>}
@@ -46,6 +52,7 @@ const AdminDashboard = () => {
             {adminInfo && <div><h2><i className="bi bi-person-badge-fill"></i> Active Passes</h2> <hr /> <p>{adminInfo.a_p_count}</p>{adminInfo.t_passes>0 && (<ExportPasses />)}</div>}
             {adminInfo && <div><h2><i className="bi bi-check-circle-fill"></i> Today Check-Ins</h2> <hr /> <p>{adminInfo.t_chkin}</p>{adminInfo.t_checklogs>0 && (<ExportChecklogs />)}</div>}
         </div>
+        )}
     </div>
   )
 }

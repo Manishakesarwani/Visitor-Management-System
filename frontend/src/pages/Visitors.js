@@ -81,7 +81,7 @@ const Visitors = () => {
   return (
     <div className={isEligible ? 'VisitorPage' : 'VisitorPageExtra'}>
         <div className='Visitor_profile'>
-            <SearchVisistors />
+            {!visError && visitors && <SearchVisistors />}
             {visError && <h3>{visError}</h3>}
                {!visError && visitors && visitors.map((v)=>(
                     <div key={v._id} className='vis'>

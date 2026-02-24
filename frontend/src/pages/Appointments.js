@@ -52,7 +52,8 @@ const Appointments = () => {
         {!isLoading && (<div className='appointments'>
             {appError && <h3>{appError}</h3>}
             <div className='appointment_list'>
-                <FilterAppointments />
+                {!appError && user && appointments && (<FilterAppointments />)}
+                
                 {!appError && user && appointments && appointments.map((a)=>(
                 <div key={a._id}>
                     <div className='appointments_details'>

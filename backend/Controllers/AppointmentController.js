@@ -141,7 +141,7 @@ exports.updateAppointmentStatus = async (req, res) => {
         else if(!Status){
             return res.status(400).json({error: `Please mention the status to be updated`});
         }
-        const appointment = await Appointment.findOneAndUpdate({_id: id}, {Status}, {new: true})
+        const appointment = await Appointment.findOneAndUpdate({_id: id}, {Status}, {returnDocument: 'after'})
         .populate("EmployeeId", "Name Username Role")
         .populate("VisitorId", "Name Username PhoneNumber");
 
