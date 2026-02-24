@@ -1,6 +1,7 @@
 const Appointment = require("../models/AppointmentModel");
 const {send_Mail} = require("../SendEmail/SendEmail");
 const {Parser} = require("json2csv");
+const { send_SMS } = require("../sendSMS/SendSMS");
 
 exports.getAllAppointments = async (req, res) => {
     const appointments = await Appointment.find()
@@ -154,6 +155,8 @@ exports.updateAppointmentStatus = async (req, res) => {
 
         if(appointment.Status==="approve"){
             await send_Mail(appointment.VisitorId.Username, `Appointment ${sts}`, `Hello ${appointment.VisitorId.Name}, <br><br>Your appointment is <b>${sts}</b>. Pass will be gernerated and share with you shortly.<br><br> Thank You!`);
+
+            await send_SMS(`+91${appointment.VisitorId.PhoneNumber}`, `Hello ${appointment.VisitorId.Name}, Your appointment is ${sts}. Pass will be gernerated and share with you shortly. Thank You!`);
         }
 
         res.status(200).json(appointment);
