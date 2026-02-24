@@ -1,5 +1,6 @@
 const pdfkit = require("pdfkit");
 const fs = require("fs");
+const path = require("path");
 
 const PdfGenerator = (visitor_JSON, QRCODE) => {
     return new Promise((resolve, reject)=>{
@@ -13,13 +14,17 @@ const PdfGenerator = (visitor_JSON, QRCODE) => {
             //Adding a path to save this file.
             const file_path = `VisitorPasses/${file_name}`;
 
+            const photo_path = visitor_JSON.Photo.replace(/\\/g,"/");
+            const f_path = path.join(__dirname, "../", photo_path);
+
             // Save Pdf to a new file
             pdf_file.pipe(fs.createWriteStream(file_path));
 
             //Adding Visitor information to this file.
             pdf_file.fontSize(20).text("Visitor Pass", {align: 'center'});
             pdf_file.moveDown();
-            pdf_file.image(`${visitor_JSON.Photo}`, {width: 150});
+
+            pdf_file.image(f_path, {width: 150});
             pdf_file.moveDown();
             pdf_file.fontSize(16).text(`Visitor Name: ${visitor_JSON.Name}`);
             pdf_file.fontSize(16).text(`Visitor Username: ${visitor_JSON.Username}`);
