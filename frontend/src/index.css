@@ -150,6 +150,8 @@ nav a:hover{
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
 }
 .nav-links div{
   background: #90AB8B;
@@ -563,5 +565,20 @@ footer{
   nav a{
     font-size: 14px;
     padding: 0 !important;
+  }
+  header h1 span {
+    font-size: 15px;
+  }
+  .nav-links, nav>div,     .adminDashboard div h2, .employeeDashboard div h2, .securityDashboard div h2, .adminDashboard div p, .employeeDashboard div p, .securityDashboard div p{
+    font-size: 12px !important;
+  }
+  .adminDashboard div h2, .employeeDashboard div h2, .securityDashboard div h2, .adminDashboard div p, .employeeDashboard div p, .securityDashboard div p {
+    padding: 5px 0 !important;
+  }
+  .admin, .employee, .security {
+    font-size: 11px !important;
+  }
+  .admin h3, .employee h3, .security h3 {
+    font-size: 20px;
   }
 }
