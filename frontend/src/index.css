@@ -533,6 +533,9 @@ footer{
   .container{
     width: 100%;
     display: block !important;
+    /* text-align: center; */
+  }
+  header .container a, header .container nav{
     text-align: center;
   }
   header nav div span{
@@ -554,5 +557,11 @@ footer{
   }
   .filter {
     font-size: 14px;
+  }
+}
+@media screen and (max-width: 400px) {
+  nav a{
+    font-size: 14px;
+    padding: 0 !important;
   }
 }
