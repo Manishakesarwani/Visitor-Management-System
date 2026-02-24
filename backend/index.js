@@ -36,7 +36,7 @@ app.use("/VisitorPasses", express.static(path.join(__dirname, "VisitorPasses")))
 app.use("/api/user", User);
 app.use("/api/admin", UserViaAdmin);
 app.use("/api/visitors", Visitor);
-app.use("/uploads", express.static("uploads"));
+app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 app.use("/api/appointments", Appointment);
 app.use("/api/pass", Pass);
 app.use("/api/checkpass", CheckInOut);
