@@ -69,6 +69,8 @@ exports.createNewPass = async (req, res) => {
             .populate("VisitorId", "Name Username PhoneNumber Photo")
             .populate("AppointmentId");
 
+            console.log(pass1);
+
             const f_name = pass1.PdfFile.split("/");
             const f_path = path.join(__dirname, "../", pass1.PdfFile);
 
