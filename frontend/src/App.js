@@ -10,6 +10,7 @@ import Pass from './pages/Pass';
 import Footer from './Components/Footer';
 import SelfVisitorRegistration from './pages/SelfVisitorRegistration';
 import Users from './pages/Users';
+import PageLinks from './Components/PageLinks';
 
 function App() {
 
@@ -19,6 +20,7 @@ function App() {
     <div className="App">
       <BrowserRouter>
       <Navbar />
+      {user && <PageLinks />}
       <main>
         <div className='container'>
           <Routes>
