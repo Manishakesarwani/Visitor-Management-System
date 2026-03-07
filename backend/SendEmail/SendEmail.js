@@ -11,7 +11,7 @@ const mailjet = Mailjet.apiConnect(
 
 exports.send_Mail = async (reciever, emailSubject, emailBody) => {
     try{
-        // console.log(reciever, emailSubject, emailBody);
+        
 
         const response = await mailjet.post("send", {version: "v3.1"}).request({
             Messages:[{
